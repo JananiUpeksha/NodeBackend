@@ -18,7 +18,7 @@ model User {
 model Flower {
   flower_code        Int    @id @default(autoincrement())
   flower_name        String
-  flower_image       String
+  flower_image       String @db.LongText
   flower_size        String
   flower_colour      String
   flower_unit_price  Int
