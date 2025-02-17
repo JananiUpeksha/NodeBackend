@@ -24,3 +24,13 @@ model Flower {
   flower_unit_price  Int
   flower_qty_on_hand Int
 }
+
+model Customer {
+  customer_id        Int    @id @default(autoincrement())
+  customer_firstName String
+  customer_lastName  String
+  customer_phone     String // Changed from customer_contact to customer_phone
+  customer_email     String @unique
+  customer_address   String
+  gender             String
+}
