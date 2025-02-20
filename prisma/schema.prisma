@@ -34,3 +34,25 @@ model Customer {
   customer_address   String
   gender             String
 }
+
+model Order {
+  order_id           Int     @id @default(autoincrement())
+  customer_email     String
+  order_date         String
+  wrapping_charges   Decimal
+  decoration_charges Decimal
+  sub_total          Decimal
+  discount           Decimal
+  total_amount       Decimal
+  paid_amount        Decimal
+  balance            Decimal
+}
+
+model OrderDetail {
+  order_detail_id Int     @id @default(autoincrement())
+  order_id        Int // Foreign key to Order
+  item            String
+  quantity        Int
+  unitPrice       Decimal
+  total           Decimal
+}
